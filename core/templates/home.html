@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Home - Blog Personal{% endblock %}
+{% block class %}
+    class="home-body"
+{% endblock %}
+
+{% block content %}
+    
+<main class="home-main">
+        <div class="main-container">
+            <p class="main-container__text">
+                Desarrollador Web
+            </p>
+            <a class="main-container__link" href="{% url 'blogs' %}">Leer más</a>
+        </div>
+</main>
+
+{% endblock %}
+
+{% block contact %}{% endblock %}
+{% block footer %}{% endblock %}

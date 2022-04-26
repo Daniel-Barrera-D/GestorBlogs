@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Mi Perfíl{% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+<main>
+    <section class="profile">
+        <div class="profile-img">
+            <img src="{% static 'img/profile-pic.jpg' %}" alt="">
+        </div>
+        <div class="profile-info">
+            <h2>Hola, mi nombre es Daniel Barrera</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Repellendus harum aperiam architecto suscipit reiciendis nam ut laborum doloremque? 
+                Totam delectus velit voluptates aliquid enim error molestias officia nihil beatae voluptatum!
+            </p>
+        </div>
+    </section>
+
+    <section class="projects-container">
+        <h3>Proyectos</h3>
+        {% for project in projects %}
+        <div class="project">
+            <h4>{{ project.title }}</h4>
+            <p>{{ project.description }}</p>
+        </div>
+        {% endfor %}
+    </section>
+</main>
+
+{% endblock %}

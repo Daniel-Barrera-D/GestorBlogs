@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Mis Blogs{% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+<main class="blogs-main">
+    <section class="news">
+        <div class="news-content">
+            <h3>Noticia</h3>
+            <img src="{{ firtsBlog.image.url }}" alt="img de blog">
+            <div class="news-info">
+                <h2>{{ firtsBlog.title }}s</h2>
+                <p>{{ firtsBlog.description }}</p>
+                <a class="blogs-btn" href="{% url 'blogs' firtsBlog.id %}">Leer más</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="posts">
+        <h3>Últimos blogs</h3>
+        {% for blog in blogs %}
+        <div class="posts-blog">
+            <img src="{{ blog.image.url }}" alt="">
+            <h4>{{ blog.title }}</h4>
+            <p>{{ blog.description }}</p>
+            <a class="blogs-btn" href="{% url 'blogs' blog.id %}">Leer más</a>
+        </div>
+        {% endfor %}
+    </section>
+</main>
+
+{% endblock %}
+{% block contact %}{% endblock %}
